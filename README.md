@@ -2,4 +2,4 @@
 Projetos de exemplo em java para o bootcamp Santander/Dio
 
 ## Projetos e Desafios
-* Controle de fluxo
+* Desafio banco digital OO - Criando um Banco Digital com Java e Orientação a Objetos
