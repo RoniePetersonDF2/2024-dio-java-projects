@@ -15,12 +15,18 @@ public abstract class Conta implements IConta {
 	}
 
 	@Override
-	public void sacar(double valor) {
+	public void sacar(double valor)  {
+		if (this.saldo < valor) {
+			throw new RuntimeException("Saldo insuficiente");
+		}
 		saldo -= valor;
 	}
 
 	@Override
 	public void depositar(double valor) {
+		if (valor <= 0) {
+			throw new RuntimeException("Valor a ser depositado não pode ser menor ou igual a zero.");
+		}
 		saldo += valor;
 	}
 
@@ -48,4 +54,11 @@ public abstract class Conta implements IConta {
 		System.out.println(String.format("Numero: %d", this.numero));
 		System.out.println(String.format("Saldo: %.2f", this.saldo));
 	}
+
+	@Override
+	public String toString() {
+		return "\nConta {agencia=" + agencia + ", numero=" + numero + ", saldo=" + saldo + ", cliente=" + cliente + "}";
+	}
+	
+	
 }
